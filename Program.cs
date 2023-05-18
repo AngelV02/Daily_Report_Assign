@@ -34,19 +34,29 @@ namespace DailyReport
             Console.Write("Is there any other feedback you’d like to provide? Please be specific: ");
             string feedback = Console.ReadLine();
 
+            // Declare a variable to store the study hours
             double studyHours;
+
+            // Declare a variable to track the validity of the study hours
             bool isValidStudyHours;
             do
+
             {
                 Console.Write("How many hours did you study today? ");
-                string studyHoursInput = Console.ReadLine();
-                isValidStudyHours = double.TryParse(studyHoursInput, out studyHours);
 
+                // Read the user input as a string
+                string studyHoursInput = Console.ReadLine();
+
+                isValidStudyHours = double.TryParse(studyHoursInput, out studyHours);
+                // parse the input string as a double value
+                // 
                 if (!isValidStudyHours)
                 {
                     Console.WriteLine("Invalid input. Please enter a numeric value.");
+                    // Display an error message if the input is not a valid numeric value
                 }
             } while (!isValidStudyHours);
+            // Repeat the loop until a valid numeric value is entered for study hours
 
 
             // Print thank you message
